@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body ng-controller="quizController">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -41,6 +41,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/mainApp.js"></script>
+    <script src="~/Scripts/quizController.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
