@@ -4,9 +4,9 @@
         .module("mainApp")
         .controller("quizController", quizController);
 
-    quizController.$inject = ["$scope"]; // put service here when created
+    quizController.$inject = ["$scope", "mainService"]; // put service here when created
 
-    function quizController($scope) {
+    function quizController($scope, mainService) {
 
         var vm = this;
         vm.$scope = $scope;
@@ -16,11 +16,4 @@
             console.log("quiz controller initialized");
         }
     }
-
-
-
-
-
-
-
 })();
