@@ -4,7 +4,7 @@
         .module("mainApp")
         .controller("quizController", quizController);
 
-    quizController.$inject = ["$scope", "mainService"]; // put service here when created
+    quizController.$inject = ["$scope", "mainService"]; 
 
     function quizController($scope, mainService) {
 
