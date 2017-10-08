@@ -26,7 +26,7 @@ namespace CodeQuiz.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void Quizzes()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -39,7 +39,7 @@ namespace CodeQuiz.Tests.Controllers
         }
 
         [TestMethod]
-        public void Contact()
+        public void CreateQuiz()
         {
             // Arrange
             HomeController controller = new HomeController();
