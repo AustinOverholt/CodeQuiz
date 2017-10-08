@@ -30,6 +30,7 @@ namespace CodeQuiz.Services
         }
 
         // Insert Quiz
+        public void Insert()
 
         // Mapper
         private Quiz Mapper(SqlDataReader reader)
