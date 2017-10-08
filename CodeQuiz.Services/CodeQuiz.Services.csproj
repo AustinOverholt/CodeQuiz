@@ -50,6 +50,10 @@
       <Project>{DA142C65-7EAA-48F2-B2DA-002EAC13D7B4}</Project>
       <Name>CodeQuiz.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CodeQuiz\CodeQuiz.csproj">
+      <Project>{7f1e5ec9-9841-4f73-8a4a-09c32647add2}</Project>
+      <Name>CodeQuiz</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
