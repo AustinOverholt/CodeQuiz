@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeQuiz.Tests", "CodeQuiz.
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CodeQuiz.Database", "CodeQuiz.Database\CodeQuiz.Database.sqlproj", "{B7B5C710-234D-41D0-B70A-7DDB421BC0CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeQuiz.Services", "CodeQuiz.Services\CodeQuiz.Services.csproj", "{2E20348A-9955-4C18-B172-6ACA6BE71C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{B7B5C710-234D-41D0-B70A-7DDB421BC0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B5C710-234D-41D0-B70A-7DDB421BC0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7B5C710-234D-41D0-B70A-7DDB421BC0CE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2E20348A-9955-4C18-B172-6ACA6BE71C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E20348A-9955-4C18-B172-6ACA6BE71C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E20348A-9955-4C18-B172-6ACA6BE71C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E20348A-9955-4C18-B172-6ACA6BE71C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
