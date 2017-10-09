@@ -62,5 +62,6 @@
     <Build Include="Quiz.sql" />
     <Build Include="Quiz_SelectAll.sql" />
     <Build Include="Quiz_Insert.sql" />
+    <Build Include="Quiz_Update.sql" />
   </ItemGroup>
 </Project>

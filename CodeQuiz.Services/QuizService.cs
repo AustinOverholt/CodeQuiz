@@ -77,6 +77,5 @@ namespace CodeQuiz.Services
 
             return model;
         }
-
     }
 }
