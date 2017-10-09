@@ -1,4 +1,5 @@
 ﻿using CodeQuiz.Model.Domain;
+using CodeQuiz.Model.Requests;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -30,7 +31,35 @@ namespace CodeQuiz.Services
         }
 
         // Insert Quiz
-        public void Insert()
+        public int Insert(QuizAddRequest model)
+        {
+            int id = 0;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("dbo.Quiz_Insert", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Category", model.Category);
+                    cmd.Parameters.AddWithValue("@Question", model.Question);
+                    cmd.Parameters.AddWithValue("@Answer1", model.Answer1);
+                    cmd.Parameters.AddWithValue("@Answer2", model.Answer2);
+                    cmd.Parameters.AddWithValue("@Answer3", model.Answer3);
+                    cmd.Parameters.AddWithValue("@Answer4", model.Answer4);
+
+                    SqlParameter parm = new SqlParameter("@Id", SqlDbType.Int);
+                    parm.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(parm);
+
+                    cmd.ExecuteNonQuery();
+
+                    id = (int)cmd.Parameters["@Id"].Value;
+                }
+                conn.Close();
+            }
+            return id;
+        }
 
         // Mapper
         private Quiz Mapper(SqlDataReader reader)
