@@ -46,4 +46,5 @@ INSERT INTO [dbo].[Quiz]
            ,@Answer2 
            ,@Answer3 
            ,@Answer4)
+	SET @Id = SCOPE_IDENTITY()
 END
