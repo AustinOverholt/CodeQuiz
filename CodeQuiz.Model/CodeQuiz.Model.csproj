@@ -46,6 +46,10 @@
     <Compile Include="Requests\QuizAddRequest.cs" />
     <Compile Include="Requests\QuizUpdateRequest.cs" />
     <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Responses\ErrorResponse.cs" />
+    <Compile Include="Responses\ItemResponse.cs" />
+    <Compile Include="Responses\ItemsResponse.cs" />
+    <Compile Include="Responses\SuccessResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
