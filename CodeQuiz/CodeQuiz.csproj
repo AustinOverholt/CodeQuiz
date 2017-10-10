@@ -299,6 +299,10 @@
       <Project>{DA142C65-7EAA-48F2-B2DA-002EAC13D7B4}</Project>
       <Name>CodeQuiz.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CodeQuiz.Services\CodeQuiz.Services.csproj">
+      <Project>{2e20348a-9955-4c18-b172-6aca6be71c84}</Project>
+      <Name>CodeQuiz.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
