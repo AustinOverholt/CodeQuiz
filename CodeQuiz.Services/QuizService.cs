@@ -62,10 +62,8 @@ namespace CodeQuiz.Services
         }
 
         // Quiz Update 
-        public int Update(QuizUpdateRequest model)
+        public void Update(QuizUpdateRequest model)
         {
-            int id = 0;
-
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
@@ -84,10 +82,24 @@ namespace CodeQuiz.Services
                 }
                 conn.Close();
             }
-            return id;
         }
 
         // Quiz Delete
+        public void Delete(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("dbo.Quiz_Delete", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
 
         // Mapper
         private Quiz Mapper(SqlDataReader reader)
