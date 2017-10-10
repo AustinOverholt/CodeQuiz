@@ -49,5 +49,24 @@ namespace CodeQuiz.Controllers.Api
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex); // exception handled here
             }
         }
+
+        [Route(), HttpPut] // Sets api endpoint and http type
+        public HttpResponseMessage Update(QuizUpdateRequest model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+            try
+            {
+                SuccessResponse resp = new SuccessResponse();
+                quizService.Update(model);
+                return Request.CreateResponse(HttpStatusCode.OK, resp);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
     }
 }
