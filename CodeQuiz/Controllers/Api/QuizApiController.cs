@@ -68,5 +68,20 @@ namespace CodeQuiz.Controllers.Api
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
+
+        [Route("{id:int}"), HttpDelete]
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                SuccessResponse resp = new SuccessResponse();
+                quizService.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK, resp);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
     }
 }
