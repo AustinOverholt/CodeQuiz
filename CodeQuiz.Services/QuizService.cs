@@ -61,6 +61,10 @@ namespace CodeQuiz.Services
             return id;
         }
 
+        // Quiz update 
+
+        // Quiz Delete
+
         // Mapper
         private Quiz Mapper(SqlDataReader reader)
         {
