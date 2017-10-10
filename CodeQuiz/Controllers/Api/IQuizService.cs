@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CodeQuiz.Controllers.Api
 {
-    internal interface IQuizService
+    public interface IQuizService
     {
         List<Quiz> SelectAll();
         int Insert(QuizAddRequest model);
