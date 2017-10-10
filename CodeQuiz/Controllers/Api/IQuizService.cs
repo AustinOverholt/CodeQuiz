@@ -1,14 +1,10 @@
 ﻿using CodeQuiz.Model.Domain;
 using CodeQuiz.Model.Requests;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CodeQuiz.Services.Interfaces
+namespace CodeQuiz.Controllers.Api
 {
-    public interface IQuizService
+    internal interface IQuizService
     {
         List<Quiz> SelectAll();
         int Insert(QuizAddRequest model);
