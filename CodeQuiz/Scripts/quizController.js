@@ -11,9 +11,25 @@
         var vm = this;
         vm.$scope = $scope;
         vm.$onInit = _init;
+        vm.mainService = mainService;
 
         function _init() {
             console.log("quiz controller initialized");
+            _getQuizzes();
+        }
+
+        function _getQuizzes() {
+            mainService.get("/api/quiz")
+                .then(_getSuccess)
+                .catch(_getFailed);
+
+            function _getSuccess(res) {
+                console.log("Get Success", res);
+            }
+
+            function _getFailed(err) {
+                console.log("Get Failed", err);
+            }
         }
     }
 })();
