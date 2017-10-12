@@ -3,7 +3,7 @@
 }
 
 <div class="jumbotron">
-    <table class="table-responsive table-striped table-hover">
+    <table class="table-responsive table-striped table-hover table-condensed table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -13,6 +13,7 @@
                 <th>Answer 2</th>
                 <th>Answer 3</th>
                 <th>Answer 4</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                 <td>{{quiz.Answer2}}</td>
                 <td>{{quiz.Answer3}}</td>
                 <td>{{quiz.Answer4}}</td>
+                <td><button class="btn-danger btn-sm">Delete</button></td>
             </tr>
         </tbody>
     </table>
