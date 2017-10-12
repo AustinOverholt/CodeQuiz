@@ -12,6 +12,7 @@
         vm.$scope = $scope;
         vm.$onInit = _init;
         vm.mainService = mainService;
+        vm.quizList = {};
 
         function _init() {
             console.log("quiz controller initialized");
@@ -25,6 +26,8 @@
 
             function _getSuccess(res) {
                 console.log("Get Success", res);
+                vm.quizList = res.data.Items;
+                console.log(vm.quizList);
             }
 
             function _getFailed(err) {
