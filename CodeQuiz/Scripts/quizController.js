@@ -19,7 +19,6 @@
 
         function _init() {
             console.log("quiz controller initialized");
-            toastr.success("toastr works!");
             _getQuizzes();
         }
 
@@ -57,12 +56,12 @@
 
             function _deleteSuccess(res) {
                 // if successful splice
-                console.log(res);
+                toastr.success(res);
                 vm.quizList.splice(Index, 1);
             }
 
             function _deleteFailed(err) {
-                console.log(err);
+                toastr.error(err);
             }
         }
     }
