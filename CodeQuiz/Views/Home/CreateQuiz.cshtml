@@ -1,31 +1,36 @@
 ﻿@{
     ViewBag.Title = "CreateQuiz";
 }
-<div class="jumbotron">
-    <table class="table-responsive table-striped table-hover table-condensed table-bordered">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Category</th>
-                <th>Question</th>
-                <th>Answer 1</th>
-                <th>Answer 2</th>
-                <th>Answer 3</th>
-                <th>Answer 4</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="quiz in quizCtrl.quizList">
-                <td>{{quiz.Id}}</td>
-                <td>{{quiz.Category}}</td>
-                <td>{{quiz.Question}}</td>
-                <td>{{quiz.Answer1}}</td>
-                <td>{{quiz.Answer2}}</td>
-                <td>{{quiz.Answer3}}</td>
-                <td>{{quiz.Answer4}}</td>
-                <td><button class="btn-danger btn-sm">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
+<div ng-controller="quizController as quizCtrl">
+    <div class="jumbotron">
+        <table class="table-responsive table-striped table-hover table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Question</th>
+                    <th>Answer 1</th>
+                    <th>Answer 2</th>
+                    <th>Answer 3</th>
+                    <th>Answer 4</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="quiz in quizCtrl.quizList">
+                    <td>{{quiz.Id}}</td>
+                    <td>{{quiz.Category}}</td>
+                    <td>{{quiz.Question}}</td>
+                    <td>{{quiz.Answer1}}</td>
+                    <td>{{quiz.Answer2}}</td>
+                    <td>{{quiz.Answer3}}</td>
+                    <td>{{quiz.Answer4}}</td>
+                    <td>
+                        <button class="btn-warning btn-sm">Edit</button>
+                        <button class="btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
