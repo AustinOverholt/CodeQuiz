@@ -50,6 +50,9 @@
             function _postSuccess(res) {
                 toastr.success("Question added successfully", res);
                 // close modal
+
+                // refresh list 
+                _getQuizzes();
             }
 
             function _postFailed(err) {
