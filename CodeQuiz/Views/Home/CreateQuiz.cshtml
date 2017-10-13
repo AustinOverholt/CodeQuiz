@@ -3,6 +3,7 @@
 }
 <div ng-controller="quizController as quizCtrl">
     <div class="jumbotron">
+        <button class="btn-default" ng-click="quizCtrl.newButton()">New Quiz</button>
         <table class="table-responsive table-striped table-hover table-condensed table-bordered">
             <thead>
                 <tr>
@@ -26,8 +27,8 @@
                     <td>{{quiz.Answer3}}</td>
                     <td>{{quiz.Answer4}}</td>
                     <td>
-                        <button class="btn-warning btn-sm">Edit</button>
-                        <button class="btn-danger btn-sm">Delete</button>
+                        <button class="btn-warning btn-sm" ng-click="quizCtrl.editButton()">Edit</button>
+                        <button class="btn-danger btn-sm" ng-click="quizCtrl.deleteButton()">Delete</button>
                     </td>
                 </tr>
             </tbody>
