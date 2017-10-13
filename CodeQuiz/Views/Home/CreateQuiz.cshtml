@@ -28,7 +28,7 @@
                     <td>{{quiz.Answer4}}</td>
                     <td>
                         <button class="btn-warning btn-sm" ng-click="quizCtrl.editButton()">Edit</button>
-                        <button class="btn-danger btn-sm" ng-click="quizCtrl.deleteButton()">Delete</button>
+                        <button class="btn-danger btn-sm" ng-click="quizCtrl.deleteButton(quiz.Id, $index)">Delete</button>
                     </td>
                 </tr>
             </tbody>

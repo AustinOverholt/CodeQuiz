@@ -40,14 +40,30 @@
 
         function _newButton() {
             console.log("new button clicked");
+            // modal form for new quiz question
         }
 
         function _editButton() {
             console.log("edit button clicked");
+            // modal to edit current quiz question
         }
 
-        function _deleteButton() {
-            console.log("delete button clicked");
+        function _deleteButton(Id, Index) {
+            console.log(Id, Index);
+            // delete and splice current quiz question
+            mainService.delete("/api/quiz/", Id) 
+                .then(_deleteSuccess)
+                .catch(_deleteFailed)
+
+            function _deleteSuccess(res) {
+                // if successful splice
+                console.log(res);
+                vm.quizList.splice(Index, 1);
+            }
+
+            function _deleteFailed(err) {
+                console.log(err);
+            }
         }
     }
 })();
