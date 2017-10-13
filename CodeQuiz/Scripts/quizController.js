@@ -4,9 +4,9 @@
         .module("mainApp")
         .controller("quizController", quizController);
 
-    quizController.$inject = ["$scope", "mainService"]; 
+    quizController.$inject = ["$scope", "mainService", "toastr"]; 
 
-    function quizController($scope, mainService) {
+    function quizController($scope, mainService, toastr) {
 
         var vm = this;
         vm.$scope = $scope;
@@ -19,6 +19,7 @@
 
         function _init() {
             console.log("quiz controller initialized");
+            toastr.success("toastr works!");
             _getQuizzes();
         }
 
