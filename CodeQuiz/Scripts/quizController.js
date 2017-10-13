@@ -49,7 +49,6 @@
         }
 
         function _deleteButton(Id, Index) {
-            console.log(Id, Index);
             // delete and splice current quiz question
             mainService.delete("/api/quiz/", Id) 
                 .then(_deleteSuccess)
