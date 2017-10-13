@@ -13,6 +13,7 @@
         vm.$onInit = _init;
         vm.mainService = mainService;
         vm.quizList = {};
+        vm.newQuiz = {};
         vm.newButton = _newButton;
         vm.editButton = _editButton;
         vm.deleteButton = _deleteButton;
@@ -40,7 +41,9 @@
 
         function _newButton() {
             console.log("new button clicked");
-            // modal form for new quiz question
+            // adds new question to db
+            console.log(vm.newQuiz);
+
         }
 
         function _editButton() {
