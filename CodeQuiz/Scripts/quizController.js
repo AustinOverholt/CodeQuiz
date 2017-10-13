@@ -43,6 +43,18 @@
             console.log("new button clicked");
             // adds new question to db
             console.log(vm.newQuiz);
+            mainService.post("/api/quiz/", vm.newQuiz)
+                .then(_postSuccess)
+                .catch(_postFailed);
+
+            function _postSuccess(res) {
+                toastr.success("Question added successfully", res);
+                // close modal
+            }
+
+            function _postFailed(err) {
+                toastr.error("Question failed to post", err);
+            }
 
         }
 
