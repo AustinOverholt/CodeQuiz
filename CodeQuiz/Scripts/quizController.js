@@ -50,7 +50,7 @@
             function _postSuccess(res) {
                 toastr.success("Question added successfully", res);
                 // close modal
-
+                $("#newQuestion").modal('hide');
                 // refresh list 
                 _getQuizzes();
             }
