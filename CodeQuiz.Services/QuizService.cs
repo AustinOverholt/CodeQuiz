@@ -30,6 +30,28 @@ namespace CodeQuiz.Services
             return quizList;
         }
 
+        public List<Quiz> SelectById(int Id)
+        {
+            List<Quiz> quizList = new List<Quiz>();
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("dbo.Quiz_SelectById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", Id);
+                    SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Quiz model = Mapper(reader);
+                        quizList.Add(model);
+                    }
+                }
+                conn.Close();
+            }
+            return quizList;
+        }
+
         // Insert Quiz
         public int Insert(QuizAddRequest model)
         {
