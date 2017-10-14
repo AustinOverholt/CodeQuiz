@@ -88,6 +88,8 @@
 
             function _putSuccess(res) {
                 toastr.success("Edit Successful");
+                $("#editQuestion").modal('hide');
+                _getQuizzes();
             }
 
             function _putFailed(err) {
