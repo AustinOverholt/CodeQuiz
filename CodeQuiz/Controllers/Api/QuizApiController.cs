@@ -29,7 +29,20 @@ namespace CodeQuiz.Controllers.Api
             }
         }
 
-        // Get By Id
+        [Route("{id:int}"), HttpGet]
+        public HttpResponseMessage GetById(int id)
+        {
+            try
+            {
+                ItemResponse<Quiz> resp = new ItemResponse<Quiz>();
+                resp.item = quizService.SelectById(id);
+                return Request.CreateResponse(HttpStatusCode.OK, resp);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
 
         [Route(), HttpPost]
         public HttpResponseMessage Post(QuizAddRequest model)

@@ -30,9 +30,9 @@ namespace CodeQuiz.Services
             return quizList;
         }
 
-        public List<Quiz> SelectById(int Id)
+        public Quiz SelectById(int Id)
         {
-            List<Quiz> quizList = new List<Quiz>();
+            Quiz singleQuiz = new Quiz();
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
@@ -43,13 +43,12 @@ namespace CodeQuiz.Services
                     SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
-                        Quiz model = Mapper(reader);
-                        quizList.Add(model);
+                         singleQuiz = Mapper(reader);
                     }
                 }
                 conn.Close();
             }
-            return quizList;
+            return singleQuiz;
         }
 
         // Insert Quiz
