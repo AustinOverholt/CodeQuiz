@@ -61,9 +61,14 @@
 
         }
 
-        function _editButton() {
-            console.log("edit button clicked");
-            // modal to edit current quiz question
+        function _editButton(Id) {
+            console.log(Id);
+            // run get by id 
+            // populate form with data
+        }
+
+        function _editSubmit() {
+            // function for submit button in edit modal
         }
 
         function _deleteButton(Id, Index) {
