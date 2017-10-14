@@ -64,7 +64,19 @@
         function _editButton(Id) {
             console.log(Id);
             // run get by id 
-            // populate form with data
+            mainService.getById("/api/quiz/", Id)
+                .then(_getSuccess)
+                .catch(_getFailed);
+
+            function _getSuccess(res) {
+                // populate form with data
+                vm.newQuiz = res.data.item;
+            }
+
+            function _getFailed(err) {
+                console.log(err);
+            }
+            
         }
 
         function _editSubmit() {
