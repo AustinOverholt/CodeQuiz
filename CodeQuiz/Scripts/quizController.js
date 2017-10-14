@@ -14,8 +14,10 @@
         vm.mainService = mainService;
         vm.quizList = {};
         vm.newQuiz = {};
+        vm.editId;
         vm.newButton = _newButton;
         vm.editButton = _editButton;
+        vm.editSubmit = _editSubmit;
         vm.deleteButton = _deleteButton;
 
         function _init() {
@@ -62,7 +64,7 @@
         }
 
         function _editButton(Id) {
-            console.log(Id);
+            vm.editId = Id;
             // run get by id 
             mainService.getById("/api/quiz/", Id)
                 .then(_getSuccess)
@@ -76,11 +78,21 @@
             function _getFailed(err) {
                 console.log(err);
             }
-            
         }
 
         function _editSubmit() {
-            // function for submit button in edit modal
+            console.log("edit submit pressed");
+            mainService.put("/api/quiz/", vm.newQuiz)
+                .then(_putSuccess)
+                .catch(_putFailed);
+
+            function _putSuccess(res) {
+                toastr.success("Edit Successful");
+            }
+
+            function _putFailed(err) {
+                toastr.error("Edit Failed");
+            }
         }
 
         function _deleteButton(Id, Index) {
