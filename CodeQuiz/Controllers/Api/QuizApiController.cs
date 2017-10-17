@@ -29,6 +29,21 @@ namespace CodeQuiz.Controllers.Api
             }
         }
 
+        [Route("{category}"), HttpGet]
+        public HttpResponseMessage GetByCategory(string category)
+        {
+            try
+            {
+                ItemsResponse<Quiz> resp = new ItemsResponse<Quiz>();
+                resp.Items = quizService.SelectByCategory(category);
+                return Request.CreateResponse(HttpStatusCode.OK, resp);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
         [Route("{id:int}"), HttpGet]
         public HttpResponseMessage GetById(int id)
         {
