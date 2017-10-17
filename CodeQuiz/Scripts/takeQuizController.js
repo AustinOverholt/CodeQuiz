@@ -10,9 +10,17 @@
         var vm = this;
         vm.$scope = $scope;
         vm.$onInit = _init;
+        vm.quizType;
+        vm.quizChoose = _quizChoose;
 
         function _init() {
-            toastr.success("Initialization successful");
+            // initialization here
+        }
+
+        // Get for category type
+        function _quizChoose() {
+            toastr.success(vm.quizType);
+            // Filter based on chosen category
         }
     }
 
