@@ -13,12 +13,17 @@
         vm.quizType;
         vm.answerSelected;
         vm.quizList = {};
+        vm.answerScore = {
+            Correct: "",
+            Incorrect: ""
+        }
         vm.quizChoose = _quizChoose;
         vm.submitAnswer = _submitAnswer;
 
         function _init() {
             // initialization here
             _quizChoose(); // get rid of this when basing quiz on category
+            console.log(vm.answerScore);
         }
 
         // Get for category type
