@@ -11,5 +11,6 @@ SELECT [Id]
       ,[Answer2]
       ,[Answer3]
       ,[Answer4]
+	  ,[Correct]
   FROM [dbo].[Quiz]
 END
