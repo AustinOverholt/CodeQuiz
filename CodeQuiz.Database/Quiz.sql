@@ -6,5 +6,6 @@
     [Answer1] NVARCHAR(MAX) NOT NULL, 
     [Answer2] NVARCHAR(MAX) NOT NULL, 
     [Answer3] NVARCHAR(MAX) NOT NULL, 
-    [Answer4] NVARCHAR(MAX) NOT NULL
+    [Answer4] NVARCHAR(MAX) NOT NULL, 
+    [Correct] INT NOT NULL
 )
