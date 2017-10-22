@@ -11,7 +11,8 @@
         vm.$scope = $scope;
         vm.$onInit = _init;
         vm.quizType;
-        vm.answerSelected;
+        vm.answerSelected; // stores answer that user selected
+        vm.questionSelected; // stores question that user wants  
         vm.quizList = {};
         vm.answerScore = {
             Correct: "",

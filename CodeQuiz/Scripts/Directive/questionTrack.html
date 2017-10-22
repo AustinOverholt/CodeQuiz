@@ -1,3 +1,10 @@
-﻿<div class="panel">
-    <p>Question Tracker</p>
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <strong>Question Number</strong>
+    </div>
+    <div class="panel-body">
+        <form ng-repeat="quiz in takeCtrl.quizList">
+            <label><input ng-model="takeCtrl.questionSelected" type="radio" name="optradio" value="{{quiz.Id}}"> {{quiz.Id}} </label>
+        </form>
+    </div>
 </div>
