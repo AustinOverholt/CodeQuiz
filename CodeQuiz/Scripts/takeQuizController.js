@@ -30,7 +30,7 @@
         // Get for category type
         function _quizChoose() {
             // Filter based on chosen category
-            mainService.get("/api/quiz/") // Get quiz based on category for now just getting all quizzes
+            mainService.getById("/api/quiz/", vm.quizType) // Get quiz based on category for now just getting all quizzes
                 .then(_getQuizSuccess)
                 .catch(_getQuizFailed)
 
