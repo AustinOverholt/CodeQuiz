@@ -7,9 +7,9 @@
         Please Select Type of Quiz You Would Like To Take
         <form name="quizCategory">
             <select ng-model="takeCtrl.quizType">
-                <option>C#</option>
-                <option>JS</option>
-                <option>SQL</option>
+                <option value="CSharp">C#</option>
+                <option value="Javascript">JS</option>
+                <option value="Sql">Sql</option>
             </select>
             <button class="btn btn-primary" ng-click="takeCtrl.quizChoose()" type="submit">Submit</button>
         </form>
