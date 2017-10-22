@@ -92,6 +92,7 @@ namespace CodeQuiz.Services
                     cmd.Parameters.AddWithValue("@Answer2", model.Answer2);
                     cmd.Parameters.AddWithValue("@Answer3", model.Answer3);
                     cmd.Parameters.AddWithValue("@Answer4", model.Answer4);
+                    cmd.Parameters.AddWithValue("@Correct", model.Correct);
 
                     SqlParameter parm = new SqlParameter("@Id", SqlDbType.Int);
                     parm.Direction = ParameterDirection.Output;
@@ -122,6 +123,7 @@ namespace CodeQuiz.Services
                     cmd.Parameters.AddWithValue("@Answer2", model.Answer2);
                     cmd.Parameters.AddWithValue("@Answer3", model.Answer3);
                     cmd.Parameters.AddWithValue("@Answer4", model.Answer4);
+                    cmd.Parameters.AddWithValue("@Correct", model.Correct);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -159,6 +161,7 @@ namespace CodeQuiz.Services
             model.Answer2 = reader.GetString(index++);
             model.Answer3 = reader.GetString(index++);
             model.Answer4 = reader.GetString(index++);
+            model.Correct = reader.GetInt32(index++);
 
             return model;
         }

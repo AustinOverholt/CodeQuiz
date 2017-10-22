@@ -21,5 +21,8 @@ namespace CodeQuiz.Model.Requests
 
         [Required]
         public string Answer4 { get; set; }
+
+        [Required]
+        public int Correct { get; set; }
     }
 }
