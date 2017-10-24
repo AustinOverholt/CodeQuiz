@@ -98,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Secrets.App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeQuiz.Model\CodeQuiz.Model.csproj">
