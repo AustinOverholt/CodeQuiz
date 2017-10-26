@@ -13,6 +13,5 @@ namespace CodeQuiz.Services.Interfaces
         int Insert(QuizAddRequest model);
         void Update(QuizUpdateRequest model);
         void Delete(int id);
-        Quiz Mapper(SqlDataReader reader);
     }
 }

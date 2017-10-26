@@ -2,25 +2,36 @@
 using CodeQuiz.Model.Requests;
 using CodeQuiz.Model.Responses;
 using CodeQuiz.Services;
+using CodeQuiz.Services.Interfaces;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Collections.Generic;
 
 namespace CodeQuiz.Controllers.Api
 {
     [RoutePrefix("api/quiz")]
     public class QuizApiController : ApiController
     {
-        QuizService quizService = new QuizService();
+        private IQuizService _quizService;
+        public QuizApiController(IQuizService quizService)
+        {
+            _quizService = quizService;
+        }
 
+        public QuizApiController()
+        {
+            _quizService = new QuizService();
+        }
+        
         [Route(), HttpGet]
         public HttpResponseMessage Get()
         {
             try
             {
                 ItemsResponse<Quiz> resp = new ItemsResponse<Quiz>();
-                resp.Items = quizService.SelectAll();
+                resp.Items = _quizService.SelectAll();
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)
@@ -35,7 +46,7 @@ namespace CodeQuiz.Controllers.Api
             try
             {
                 ItemsResponse<Quiz> resp = new ItemsResponse<Quiz>();
-                resp.Items = quizService.SelectByCategory(category);
+                resp.Items = _quizService.SelectByCategory(category);
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)
@@ -50,7 +61,7 @@ namespace CodeQuiz.Controllers.Api
             try
             {
                 ItemResponse<Quiz> resp = new ItemResponse<Quiz>();
-                resp.item = quizService.SelectById(id);
+                resp.item = _quizService.SelectById(id);
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)
@@ -69,7 +80,7 @@ namespace CodeQuiz.Controllers.Api
             try
             {
                 ItemResponse<int> resp = new ItemResponse<int>(); // instantiates an item for id
-                resp.item = quizService.Insert(model); // inserts http post model into insert service
+                resp.item = _quizService.Insert(model); // inserts http post model into insert service
                 return Request.CreateResponse(HttpStatusCode.OK, resp); // if good returns status code and response
             }
             catch (Exception ex)
@@ -88,7 +99,7 @@ namespace CodeQuiz.Controllers.Api
             try
             {
                 SuccessResponse resp = new SuccessResponse();
-                quizService.Update(model);
+                _quizService.Update(model);
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)
@@ -103,7 +114,7 @@ namespace CodeQuiz.Controllers.Api
             try
             {
                 SuccessResponse resp = new SuccessResponse();
-                quizService.Delete(id);
+                _quizService.Delete(id);
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)

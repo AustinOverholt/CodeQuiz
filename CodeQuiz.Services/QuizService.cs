@@ -1,12 +1,13 @@
 ﻿using CodeQuiz.Model.Domain;
 using CodeQuiz.Model.Requests;
+using CodeQuiz.Services.Interfaces;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace CodeQuiz.Services
 {
-    public class QuizService : BaseService
+    public class QuizService : BaseService, IQuizService
     {
         // Select All Quizzes
         public List<Quiz> SelectAll()
