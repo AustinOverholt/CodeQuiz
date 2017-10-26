@@ -44,7 +44,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Create New Question</h4>
+                    <h4 class="modal-title">Edit Question</h4>
                 </div>
                 <div class="modal-body">
                     <form name="newQuestion" ng-submit="quizCtrl.editSubmit(newQuestion.$valid)" novalidate>
@@ -53,6 +53,8 @@
                             <select ng-model="quizCtrl.newQuiz.Category" required class="form-control" name="category">
                                 <option value="CSharp">C#</option>
                                 <option value="Javascript">Javascript</option>
+                                <option value="Sql">Sql</option>
+                                <option value="Css">Css</option>
                             </select>
                             <p ng-show="newQuestion.Category.$invalid && !newQuestion.Category.$pristine" class="help-block">Category is required.</p>
                         </div>
@@ -112,6 +114,8 @@
                             <select ng-model="quizCtrl.newQuiz.Category" required class="form-control" name="category">
                                 <option value="CSharp">C#</option>
                                 <option value="Javascript">Javascript</option>
+                                <option value="Sql">Sql</option>
+                                <option value="Css">Css</option>
                             </select>
                             <p ng-show="newQuestion.Category.$invalid && !newQuestion.Category.$pristine" class="help-block">Category is required.</p>
                         </div>
