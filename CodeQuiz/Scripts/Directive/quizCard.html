@@ -3,12 +3,12 @@
         <strong>Question [i]</strong>
     </div>
     <div class="panel-body">
-        <strong>{{takeCtrl.quizList[0].Question}}</strong> <hr/>
+        <strong>{{takeCtrl.questionSelected.Question}}</strong> <hr/>
         <form>
-            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="1"> A: </label> {{takeCtrl.quizList[0].Answer1}} <hr />
-            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="2"> B: </label> {{takeCtrl.quizList[0].Answer2}} <hr />
-            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="3"> C: </label> {{takeCtrl.quizList[0].Answer3}} <hr />
-            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="4"> D: </label> {{takeCtrl.quizList[0].Answer4}}
+            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="1"> A: </label> {{takeCtrl.questionSelected.Answer1}} <hr />
+            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="2"> B: </label> {{takeCtrl.questionSelected.Answer2}} <hr />
+            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="3"> C: </label> {{takeCtrl.questionSelected.Answer3}} <hr />
+            <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="4"> D: </label> {{takeCtrl.questionSelected.Answer4}}
         </form>
     </div>
     <div class="panel-footer">

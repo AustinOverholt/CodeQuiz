@@ -36,6 +36,7 @@
 
             function _getQuizSuccess(res) {
                 vm.quizList = res.data.Items;
+                vm.questionSelected = vm.quizList[0];
                 console.log(vm.quizList);
             }
 
