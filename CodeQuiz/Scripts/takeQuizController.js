@@ -50,8 +50,10 @@
             // checks if answer is correct
             if (vm.answerSelected == vm.questionSelected.Correct) {
                 toastr.success("Correct!");
+                // add +1 to correct
             } else {
                 toastr.error("Wrong!");
+                // add +1 to incorrect
             }
             // waits then runs _next question 
             setTimeout(_nextQuestion, 1000);
@@ -59,7 +61,21 @@
 
         // goes to next question 
         function _nextQuestion() {
-            toastr.success("next question!");
+            // kind of hacky, maybe go back and fix this?
+            // add if statement, if there
+            var nextQuestion = vm.questionSelected.Id;
+            nextQuestion++;
+            console.log(nextQuestion);
+        }
+
+        function _previousQuestion() {
+            var previousQuestion = vm.questionSelected.Id;
+            previousQuestion--;
+            console.log(previousQuestion);
+        }
+
+        function _getNextQuestion() {
+
         }
     }
 
