@@ -53,9 +53,11 @@
             if (vm.answerSelected == vm.questionSelected.Correct) {
                 toastr.success("Correct!");
                 // add +1 to correct
+                vm.answerScore.Correct++;
             } else {
                 toastr.error("Wrong!");
                 // add +1 to incorrect
+                vm.answerScore.Incorrect++;
             }
             // waits then runs _next question 
             setTimeout(_nextQuestion, 1000);
