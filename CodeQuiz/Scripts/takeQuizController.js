@@ -62,20 +62,36 @@
         // goes to next question 
         function _nextQuestion() {
             // kind of hacky, maybe go back and fix this?
-            // add if statement, if there
+            // add if statement, if there is a 
             var nextQuestion = vm.questionSelected.Id;
             nextQuestion++;
             console.log(nextQuestion);
+            // run function to get question 
+            _getQuestion(nextQuestion);
         }
 
         function _previousQuestion() {
             var previousQuestion = vm.questionSelected.Id;
             previousQuestion--;
             console.log(previousQuestion);
+            // run function to get question 
+            _getQuestion(previousQuestion);
         }
 
-        function _getNextQuestion() {
+        function _getQuestion(Id) {
+            console.log(Id);
+            mainService.getById("/api/quiz/", Id)
+                .then(_getSuccess)
+                .catch(_getFailed)
 
+            function _getSuccess(res) {
+                console.log(res)
+                vm.questionSelected = res.data.item;
+            }
+
+            function _getFailed(err) {
+                console.log(err);
+            }
         }
     }
 
