@@ -12,7 +12,17 @@
         </form>
     </div>
     <div class="panel-footer">
-        <button ng-click="takeCtrl.submitAnswer()" class="btn btn-primary">Submit</button>
-        <!-- For each question have a icon for that question to skip ahead to it (Add directive for this) -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 text-left">
+                    <button ng-click="takeCtrl.submitAnswer()" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <button ng-click="takeCtrl.previousQuestion()" class="btn btn-primary">Previous</button>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <button ng-click="takeCtrl.nextQuestion()" class="btn btn-primary">Next</button>
+                </div>
+        </div>
     </div>
 </div>
