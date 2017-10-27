@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body">
         <form ng-repeat="quiz in takeCtrl.quizList">
-            <label><input ng-model="takeCtrl.questionSelected" type="radio" name="optradio" value="{{quiz.Id}}"> {{quiz.Id}} </label>
+            <label><input ng-change="takeCtrl.getQuestion(quiz.Id)" ng-model="takeCtrl.questionSelected" type="radio" name="optradio" value="{{quiz.Id}}"> {{quiz.Id}} </label>
         </form>
     </div>
 </div>

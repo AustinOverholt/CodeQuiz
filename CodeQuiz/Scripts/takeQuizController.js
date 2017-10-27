@@ -22,6 +22,7 @@
         vm.submitAnswer = _submitAnswer;
         vm.previousQuestion = _previousQuestion;
         vm.nextQuestion = _nextQuestion;
+        vm.getQuestion = _getQuestion;
 
         function _init() {
             // initialization here
