@@ -47,8 +47,19 @@
 
         // submit button clicked on answer
         function _submitAnswer() {
-            console.log("button clicked");
-            console.log(vm.answerSelected);
+            // checks if answer is correct
+            if (vm.answerSelected == vm.questionSelected.Correct) {
+                toastr.success("Correct!");
+            } else {
+                toastr.error("Wrong!");
+            }
+            // waits then runs _next question 
+            setTimeout(_nextQuestion, 1000);
+        }
+
+        // goes to next question 
+        function _nextQuestion() {
+            toastr.success("next question!");
         }
     }
 
