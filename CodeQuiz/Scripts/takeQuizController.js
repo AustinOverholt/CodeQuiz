@@ -20,6 +20,8 @@
         }
         vm.quizChoose = _quizChoose;
         vm.submitAnswer = _submitAnswer;
+        vm.previousQuestion = _previousQuestion;
+        vm.nextQuestion = _nextQuestion;
 
         function _init() {
             // initialization here
@@ -70,6 +72,7 @@
             _getQuestion(nextQuestion);
         }
 
+        // goes to previous question
         function _previousQuestion() {
             var previousQuestion = vm.questionSelected.Id;
             previousQuestion--;
@@ -78,6 +81,7 @@
             _getQuestion(previousQuestion);
         }
 
+        // get by id for previous or next question
         function _getQuestion(Id) {
             console.log(Id);
             mainService.getById("/api/quiz/", Id)
