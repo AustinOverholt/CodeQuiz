@@ -7,7 +7,7 @@
     function questionTrackDirective() {
         return {
             templateUrl: "/Scripts/Directive/questionTrack.html"
-        }
+        };
     }
 
 })();

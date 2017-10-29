@@ -1,8 +1,8 @@
 ﻿(function () {
     "use strict";
-    angular 
+    angular
         .module("mainApp")
-        .controller("takeQuizController", takeQuizController)
+        .controller("takeQuizController", takeQuizController);
 
     takeQuizController.$inject = ["$scope", "mainService", "toastr"];
 
@@ -17,7 +17,7 @@
         vm.answerScore = {
             Correct: "",
             Incorrect: ""
-        }
+        };
         vm.quizChoose = _quizChoose;
         vm.submitAnswer = _submitAnswer;
         vm.previousQuestion = _previousQuestion;
@@ -35,7 +35,7 @@
             // Filter based on chosen category
             mainService.getById("/api/quiz/", vm.quizType) // Get quiz based on category for now just getting all quizzes
                 .then(_getQuizSuccess)
-                .catch(_getQuizFailed)
+                .catch(_getQuizFailed);
 
             function _getQuizSuccess(res) {
                 vm.quizList = res.data.Items;
@@ -89,10 +89,10 @@
             console.log(Id);
             mainService.getById("/api/quiz/", Id)
                 .then(_getSuccess)
-                .catch(_getFailed)
+                .catch(_getFailed);
 
             function _getSuccess(res) {
-                console.log(res)
+                console.log(res);
                 vm.questionSelected = res.data.item;
             }
 

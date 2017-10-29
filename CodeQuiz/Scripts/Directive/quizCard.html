@@ -2,6 +2,7 @@
     <div class="panel-heading">
         <strong ng-show="takeCtrl.questionSelected">Question {{takeCtrl.questionSelected.Id}}</strong>
     </div>
+    <!--Panel body for question-->
     <div class="panel-body">
         <strong>{{takeCtrl.questionSelected.Question}}</strong> <hr/>
         <form>
@@ -11,6 +12,7 @@
             <label><input ng-model="takeCtrl.answerSelected" type="radio" name="optradio" value="4"> D: </label> {{takeCtrl.questionSelected.Answer4}}
         </form>
     </div>
+    <!--Footer with buttons-->
     <div class="panel-footer">
         <div class="container">
             <div class="row">
