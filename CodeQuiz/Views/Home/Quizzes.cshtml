@@ -17,8 +17,8 @@
         
     </div>
     <div class="jumbotron">
-        <quiz-card-directive></quiz-card-directive>
-        <question-track-directive></question-track-directive>
+        <quiz-card-directive ng-show="takeCtrl.quizType"></quiz-card-directive>
+        <question-track-directive ng-show="takeCtrl.quizType"></question-track-directive>
     </div>
 </div>
 <script src="~/Scripts/angular.min.js"></script>
