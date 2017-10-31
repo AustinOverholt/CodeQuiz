@@ -67,7 +67,6 @@
         // goes to next question 
         function _nextQuestion() {
             // kind of hacky, maybe go back and fix this?
-            // add if statement, if there is a 
             var nextQuestion = vm.questionSelected.Id;
             nextQuestion++;
             console.log(nextQuestion);
@@ -92,8 +91,12 @@
                 .catch(_getFailed);
 
             function _getSuccess(res) {
-                console.log(res);
-                vm.questionSelected = res.data.item;
+                if (res.data.item.Id == 0) {
+                    toastr.error('No such id');
+                } else {
+                    console.log(res);
+                    vm.questionSelected = res.data.item;
+                }
             }
 
             function _getFailed(err) {
