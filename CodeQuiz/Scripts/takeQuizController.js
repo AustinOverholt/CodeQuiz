@@ -66,7 +66,6 @@
 
         // goes to next question 
         function _nextQuestion() {
-            // kind of hacky, maybe go back and fix this?
             var nextQuestion = vm.questionSelected.Id;
             nextQuestion++;
             console.log(nextQuestion);
@@ -92,7 +91,7 @@
 
             function _getSuccess(res) {
                 if (res.data.item.Id == 0) {
-                    toastr.error('No such id');
+                    console.log('No such id');
                 } else {
                     console.log(res);
                     vm.questionSelected = res.data.item;
