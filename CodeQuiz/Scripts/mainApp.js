@@ -1,5 +1,5 @@
 ﻿(function () {
     'use strict';
     angular
-        .module("mainApp", ["toastr"]);
+        .module("mainApp", ["toastr", "ngMaterial"]);
 })();
