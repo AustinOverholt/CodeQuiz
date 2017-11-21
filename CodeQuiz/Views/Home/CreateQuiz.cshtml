@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body">
                     <form name="newQuestion" ng-submit="quizCtrl.editSubmit(newQuestion.$valid)" novalidate>
-                        <div class="form-group">
+                        <md-input-container class="md-block">
                             <label for="category">Category:</label>
                             <select ng-model="quizCtrl.newQuiz.Category" required class="form-control" name="category">
                                 <option value="CSharp">C#</option>
@@ -56,33 +56,33 @@
                                 <option value="Css">Css</option>
                             </select>
                             <p ng-show="newQuestion.Category.$invalid && !newQuestion.Category.$pristine" class="help-block">Category is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="question">Question:</label>
                             <input ng-model="quizCtrl.newQuiz.Question" required type="text" class="form-control">
                             <p ng-show="newQuestion.Question.$invalid && !newQuestion.Question.$pristine" class="help-block">Question is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="answer1">Answer 1:</label>
                             <input ng-model="quizCtrl.newQuiz.Answer1" required type="text" class="form-control">
                             <p ng-show="newQuestion.Answer1.$invalid && !newQuestion.Answer1.$pristine" class="help-block">Answer 1 is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="answer2">Answer 2:</label>
                             <input ng-model="quizCtrl.newQuiz.Answer2" required type="text" class="form-control">
                             <p ng-show="newQuestion.Answer2.$invalid && !newQuestion.Answer2.$pristine" class="help-block">Answer 2 is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="answer3">Answer 3:</label>
                             <input ng-model="quizCtrl.newQuiz.Answer3" required type="text" class="form-control">
                             <p ng-show="newQuestion.Answer3.$invalid && !newQuestion.Answer3.$pristine" class="help-block">Answer 3 is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="answer4">Answer 4:</label>
                             <input ng-model="quizCtrl.newQuiz.Answer4" required type="text" class="form-control">
                             <p ng-show="newQuestion.Answer4.$invalid && !newQuestion.Answer4.$pristine" class="help-block">Answer 4 is required.</p>
-                        </div>
-                        <div class="form-group">
+                        </md-input-container>
+                        <md-input-container class="md-block">
                             <label for="correct">Correct Answer:</label>
                             <select ng-model="quizCtrl.newQuiz.Correct" required class="form-control" name="correct">
                                 <option value="1">Answer 1</option>
@@ -91,7 +91,7 @@
                                 <option value="4">Answer 4</option>
                             </select>
                             <p ng-show="newQuestion.Correct.$invalid && !newQuestion.Correct.$pristine" class="help-block">Correct Answer is required.</p>
-                        </div>
+                        </md-input-container>
                         <button ng-disabled="newQuestion.$invalid" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
