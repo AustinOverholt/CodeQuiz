@@ -13,12 +13,12 @@
                     <option value="Sql">Sql</option>
                     <option value="Css">Css</option>
                 </select>
-                <button class="btn btn-primary" ng-click="takeCtrl.quizChoose()" type="submit">Submit</button>
+                <md-button class="md-primary md-raised" ng-click="takeCtrl.quizChoose()" type="submit">Submit</md-button>
             </md-input-container>
         </form>
         
     </div>
-    <div class="jumbotron">
+    <div>
         <quiz-card-directive ng-show="takeCtrl.quizType"></quiz-card-directive>
         <question-track-directive ng-show="takeCtrl.quizType"></question-track-directive>
     </div>
