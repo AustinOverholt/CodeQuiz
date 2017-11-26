@@ -6,13 +6,15 @@
     <div class="jumbotron">
         Please Select Type of Quiz You Would Like To Take
         <form name="quizCategory">
-            <select ng-model="takeCtrl.quizType">
-                <option value="CSharp">C#</option>
-                <option value="Javascript">JS</option>
-                <option value="Sql">Sql</option>
-                <option value="Css">Css</option>
-            </select>
-            <button class="btn btn-primary" ng-click="takeCtrl.quizChoose()" type="submit">Submit</button>
+            <md-input-container class="md-block">
+                <select ng-model="takeCtrl.quizType">
+                    <option value="CSharp">C#</option>
+                    <option value="Javascript">JS</option>
+                    <option value="Sql">Sql</option>
+                    <option value="Css">Css</option>
+                </select>
+                <button class="btn btn-primary" ng-click="takeCtrl.quizChoose()" type="submit">Submit</button>
+            </md-input-container>
         </form>
         
     </div>
