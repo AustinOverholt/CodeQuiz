@@ -98,7 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Secrets.App.config" />
+    <None Include="Secrets.App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeQuiz.Model\CodeQuiz.Model.csproj">
