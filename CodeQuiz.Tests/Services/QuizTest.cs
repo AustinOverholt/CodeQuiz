@@ -25,5 +25,23 @@ namespace CodeQuiz.Tests
             List<Quiz> model = svc.SelectByCategory("C#");
             Assert.IsNotNull(model);
         }
+
+        [TestMethod] 
+        public void InsertQuizTest()
+        {
+
+        }
+
+        [TestMethod]
+        public void DeleteQuizTest()
+        {
+
+        }
+
+        [TestMethod]
+        public void UpdateQuizTest()
+        {
+
+        }
     }
 }
